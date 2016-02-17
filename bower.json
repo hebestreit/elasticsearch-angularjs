@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "elastic.js": "^1.2.0",
-    "angular": "angularjs#^1.5.0"
+    "angular": "angularjs#^1.5.0",
+    "elasticsearch": "^10.1.3"
   }
 }

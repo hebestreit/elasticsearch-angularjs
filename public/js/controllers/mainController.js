@@ -1,22 +1,32 @@
-app.controller('mainController', function ($scope, ejsResource) {
-    var ejs = ejsResource('http://localhost:9200');
-    var index = 'test';
-    var statusRequest = ejs.Request().indices(index).types('status');
-
+app.controller('mainController', function ($scope, elasticClient) {
     $scope.results = [];
     $scope.search = {
         queryTerm: ''
     };
 
     $scope.search = function () {
-        console.log($scope.search.query);
-
-        $scope.results = [];
-        var results = statusRequest
-            .query(ejs.MatchQuery('_all', $scope.search.queryTerm))
-            .fields(['text', 'user'])
-            .doSearch();
-
-        $scope.results.push(results);
+        elasticClient.search({
+            index: 'bank',
+            size: 10,
+            body: {
+                'query': {
+                    'multi_match': {
+                        'query': $scope.search.queryTerm,
+                        'type': 'cross_fields',
+                        'fields': [
+                            'firstname',
+                            'lastname',
+                            'address',
+                            'employer',
+                            'email',
+                            'city'
+                        ],
+                        'operator': 'and'
+                    }
+                }
+            }
+        }).then(function (response) {
+            $scope.results = response.hits.hits;
+        });
     }
 });

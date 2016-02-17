@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <title>Elasticsearch AngularJS</title>
 </head>
 <body ng-app="testApp">
 
@@ -11,12 +11,17 @@
             Search: <input type="text" ng-model="search.queryTerm"/>
         </label>
     </form>
+    <ul>
+        <li ng-repeat="result in results">
+            {{result._source.firstname}} {{result._source.lastname}}
+        </li>
+    </ul>
 </div>
 
 <!-- AngularJS-->
 <script src="bower_components/angular/angular.js"></script>
-<!-- elastic.js -->
-<script src="bower_components/elastic.js/dist/elastic.js"></script>
+<!-- elasticsearch -->
+<script src="bower_components/elasticsearch/elasticsearch.angular.js"></script>
 
 <!-- App -->
 <script src="js/app.js"></script>
