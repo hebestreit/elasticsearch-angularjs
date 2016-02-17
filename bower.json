@@ -1,0 +1,22 @@
+{
+  "name": "elasticsearch-angularjs",
+  "homepage": "https://github.com/hebestreit/elasticsearch-angularjs",
+  "authors": [
+    "Daniel Hebestreit <daniel.hebestreit@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "elastic.js": "^1.2.0",
+    "angular": "angularjs#^1.5.0"
+  }
+}

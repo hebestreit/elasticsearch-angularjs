@@ -1,0 +1,1 @@
+var app = angular.module('testApp', ['elasticjs.service', 'ngSanitize', 'infinite-scroll']);
