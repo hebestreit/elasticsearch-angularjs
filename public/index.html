@@ -8,10 +8,27 @@
 <div ng-controller="mainController">
     <form ng-submit="search()">
         <label>
-            Search: <input type="text" ng-model="search.queryTerm"/>
+            Search: <input type="text" ng-model="search.queryTerm" ng-change="autoComplete()"/>
         </label>
     </form>
+
+    <h3>Autcomplete:</h3>
+    <span>Results will be displayed when start typing.</span>
     <ul>
+        <li ng-hide="autoCompleteResults.length">
+            No results found
+        </li>
+        <li ng-repeat="result in autoCompleteResults">
+            {{result._source.firstname}} {{result._source.lastname}}
+        </li>
+    </ul>
+
+    <h3>Search:</h3>
+    <span>Hit enter to see results.</span>
+    <ul>
+        <li ng-hide="results.length">
+            No results found
+        </li>
         <li ng-repeat="result in results">
             {{result._source.firstname}} {{result._source.lastname}}
         </li>

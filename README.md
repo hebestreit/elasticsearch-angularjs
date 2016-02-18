@@ -2,15 +2,13 @@
 
 Run following command to install all dependencies with bower.
 
-    bower install
+    $ bower install
 
 ## Sample data
 
-You can download sample data from official Elasticsearch page.
-https://www.elastic.co/guide/en/elasticsearch/reference/current/_exploring_your_data.html
+To initialize some sample data please execute init.sh.
 
-    curl -XPOST 'localhost:9200/bank/account/_bulk?pretty' --data-binary "@accounts.json"
-    curl 'localhost:9200/_cat/indices?v'
+    $ ./elasticsearh/init.sh
     
 ## How to use
 
