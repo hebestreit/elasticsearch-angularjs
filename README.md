@@ -1,3 +1,17 @@
+# Elasticsearch & AngularJS
+
+This is a simple implementation of Elasticsearch and AngularJS. Currently available features are:
+
+* Search
+* AutoComplete
+
+Future features will be:
+
+* Highlighting
+* Fuzzy search
+* Faceted search
+* ...
+
 ## Install
 
 Run following command to install all dependencies with bower.
@@ -12,4 +26,4 @@ To initialize some sample data please execute init.sh.
     
 ## How to use
 
-Open public/index.html in your favorite browser and start searching!
+Open public/index.html in your favorite browser and start searching some persons!
